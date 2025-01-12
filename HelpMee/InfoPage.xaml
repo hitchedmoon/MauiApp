@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpMee.InfoPage"
+             BackgroundColor="Blue">
+    <Grid>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="0,20,0,0">
+            <Label
+                Text="Welcome to FilmTracker"
+                FontSize="25"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                Margin="10" />
+            <!-- TODO: Change atat.png to FilmTracker logo later -->
+            <Image
+                Source="filmtracker_svgview.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="100"
+                HeightRequest="100"
+                Margin="10" />
+            <Label
+                Text="FilmTracker is the ideal app to organize and rate your movie collection. Manage your films, leave reviews, and explore new ways to indulge in your passion for movies."
+                TextColor="White"
+                FontSize="16"
+                HorizontalTextAlignment="Center"
+                Margin="10" />
+            <Label
+                Text="Key Features:"
+                FontSize="20"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                Margin="10,20,10,5" />
+
+            <!-- Zentrierte TableView für Key Features -->
+            <TableView Intent="Data" HorizontalOptions="Center" Margin="10">
+                <TableRoot>
+                    <TableSection Title="Key Features" TextColor="White">
+                        <TextCell Text="Manage your movie collection" TextColor="White" Detail="Organize and categorize your films"  />
+                        <TextCell Text="Leave reviews" TextColor="White" Detail="Share your opinions on movies" />
+                        <TextCell Text="Check age ratings" TextColor="White" Detail="View movie age restrictions" />
+                        <TextCell Text="Customize and sync user accounts" TextColor="White" Detail="Personalize your experience" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Label
+                Text="More"
+                FontSize="25"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                Margin="10" />
+            <Label
+                Text="For more Informations visit our website!"
+                TextColor="Blue" 
+                HorizontalTextAlignment="Center" />
+            <Button
+                x:Name="returntomain"
+                Text="Return to Main Page"
+                SemanticProperties.Hint="Return"
+                Clicked="ReturnToMainPage1"
+                HorizontalOptions="Fill"
+                BackgroundColor="White"
+                TextColor="Black"
+                Margin="10" 
+                HeightRequest="35" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

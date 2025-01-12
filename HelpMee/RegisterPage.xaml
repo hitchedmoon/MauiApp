@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpMee.RegisterPage"
+             BackgroundColor="LightGrey">
+    <Grid ColumnDefinitions="*,*">
+        <!-- Linke Spalte: Formularelemente -->
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout
+                Padding="30,30"
+                Spacing="30"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="Fill">
+                <Label
+                    Text="Register"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                    FontSize="25" 
+                    FontAttributes="Bold" />
+
+                <VerticalStackLayout Padding="0, 0" Spacing="5">
+                    <Label Text="Enter your Username (max 16 chars):" TextColor="Black" HorizontalOptions="Start" />
+                    <Entry
+                        x:Name="UserNameEntry"
+                        Placeholder="Enter your Username"
+                        HorizontalOptions="Fill"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        PlaceholderColor="Black" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Padding="0, 0" Spacing="5">
+                    <Label Text="Enter your E-Mail Address:" TextColor="Black" HorizontalOptions="Start" />
+                    <Entry
+                        x:Name="EMailEntry"
+                        Placeholder="Enter your Email"
+                        HorizontalOptions="Fill" 
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        PlaceholderColor="Black" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Padding="0, 0" Spacing="5">
+                    <Label Text="Enter a Password (min 12 chars, max 64 chars, needs to include at least one number, one special char, and one char):" TextColor="Black" HorizontalOptions="Start" />
+                    <Entry
+                        x:Name="PasswordEntryOne"
+                        Placeholder="Enter your password"
+                        IsPassword="True"
+                        HorizontalOptions="Fill" 
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        PlaceholderColor="Black" />
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="CenterAndExpand">
+                        <CheckBox 
+                            x:Name="ShowPasswordCheckBoxOne" 
+                            CheckedChanged="OnShowPasswordCheckedChangedOne" 
+                            VerticalOptions="Center" />
+                        <Label 
+                            Text="Show Password" 
+                            TextColor="Black" 
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Padding="0, 0" Spacing="5">
+                    <Label Text="Retype Password:" TextColor="Black" HorizontalOptions="Start" />
+                    <Entry
+                        x:Name="PasswordEntryTwo"
+                        Placeholder="Retype password"
+                        IsPassword="True"
+                        HorizontalOptions="Fill" 
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        PlaceholderColor="Black" />
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="CenterAndExpand">
+                        <CheckBox 
+                            x:Name="ShowPasswordCheckBox" 
+                            CheckedChanged="OnShowPasswordCheckedChanged" 
+                            VerticalOptions="Center" />
+                        <Label 
+                            Text="Show Password" 
+                            TextColor="Black" 
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <Button
+                    x:Name="RegistrBtn"
+                    Text="Register"
+                    SemanticProperties.Hint="Register"
+                    Clicked="OnRegisterClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#28a745"
+                    TextColor="White" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Rechte Spalte: Bild -->
+        <StackLayout Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Image Source="atat.png" Aspect="AspectFill" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

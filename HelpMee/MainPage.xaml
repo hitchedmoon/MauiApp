@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpMee.MainPage"
+             BackgroundColor="LightGrey">
+    <Grid ColumnDefinitions="*,*">
+        <!-- Linke Spalte: Formularelemente -->
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout
+                Padding="30,30"
+                Spacing="30"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="Fill">
+                <Label
+                    Text="FilmTracker"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                    FontSize="25" 
+                    FontAttributes="Bold" />
+                <Label
+                    Text="Login"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                    FontSize="20" />
+                <VerticalStackLayout
+                    Padding="0, 0"
+                    Spacing="5">
+                    <Label 
+                        Text="Username*"
+                        TextColor="Black" 
+                        HorizontalOptions="Start"/>
+                    <Entry
+                        x:Name="UsernameEntry"
+                        TextColor="Black"
+                        Placeholder="Enter your Email"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="White" 
+                        PlaceholderColor="Black"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Padding="0, 0"
+                    Spacing="5">
+                    <Label 
+                        Text="Password:"
+                        TextColor="Black" />
+                    <Entry
+                        x:Name="PasswordEntry"
+                        Placeholder="Enter your password"
+                        IsPassword="True" 
+                        HorizontalOptions="Fill" 
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        PlaceholderColor="Black"/>
+                    <HorizontalStackLayout
+                        Spacing="10"
+                        VerticalOptions="CenterAndExpand">
+                        <CheckBox 
+                            x:Name="ShowPasswordCheckBox" 
+                            CheckedChanged="OnShowPasswordCheckedChanged" 
+                            VerticalOptions="Center" />
+                        <Label 
+                            Text="Show Password" 
+                            TextColor="Black" 
+                            VerticalOptions="Center" />
+                        <Label
+                            Text="Forget Password?"
+                            TextColor="Blue" 
+                            VerticalOptions="Center"
+                            GestureRecognizers="{TapGestureRecognizer Tapped='OnLinkTapped'}"
+                            HorizontalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLinkTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Padding="0, 0"
+                    Spacing="5">
+                    <Button
+                        x:Name="LogInBtn"
+                        Text="LogIn"
+                        SemanticProperties.Hint="Switch to LogInPage"
+                        HorizontalOptions="Fill"
+                        Clicked="OnLogInClicked"
+                        BackgroundColor="White" 
+                        TextColor="Black" />
+                    <Button
+                        x:Name="CounterBtn"
+                        Text="Register" 
+                        SemanticProperties.Hint="Switch to RegisterPage"
+                        Clicked="OnRegisterPageClicked"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="EndAndExpand" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Rechte Spalte: Bild -->
+        <StackLayout Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Image Source="atat.png" Aspect="AspectFill" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

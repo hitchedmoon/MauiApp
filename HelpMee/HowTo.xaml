@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpMee.HowTo"
+             BackgroundColor="LightGrey">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label 
+                Text="Welcome to the Guide Page" 
+                FontSize="24" 
+                TextColor="Black" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold" />
+
+            <!-- Section for "How to add a new Movie" -->
+            <Label 
+                Text="How to add a new Movie" 
+                FontSize="16" 
+                TextColor="Black" 
+                HorizontalOptions="Center" 
+                FontAttributes="Bold" />
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="Show Details"
+                        x:Name="ToggleMovieDetailsButton"
+                        Clicked="ToggleMovieDetails"
+                        Grid.Row="0"
+                        FontSize="12"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        Padding="5" />
+                <StackLayout x:Name="MovieDetails" IsVisible="False" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label Text="Step 1: Open the app." HorizontalOptions="Center" VerticalOptions="Center" />
+
+                        <Label Text="Step 2: Navigate to 'Add Movie'." HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Image Source="account.png" WidthRequest="1000" HeightRequest="400" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                        <Label Text="Step 3: Fill in the required details." HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Image Source="addmovie.png" WidthRequest="1000" HeightRequest="400" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Grid>
+
+            <!-- Section for "How to access account Information" -->
+            <Label 
+                Text="How to access account Information" 
+                FontSize="16" 
+                TextColor="Black"  
+                HorizontalOptions="Center"
+                FontAttributes="Bold" />
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="Show Details"
+                        x:Name="ToggleAccountDetailsButton"
+                        Clicked="ToggleAccountDetails"
+                        Grid.Row="0"
+                        FontSize="12"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        Padding="5" />
+                <StackLayout x:Name="AccountDetails" IsVisible="False" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label Text="Step 1: Go to the account section." HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Image Source="onacc.png" WidthRequest="1000" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                        <Label Text="Step 2: Access your details." HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Image Source="screenacc.png" WidthRequest="1000" HeightRequest="400" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                        <Button
+                            x:Name="AccessAcc"
+                            Text="Click here to access your account"
+                            SemanticProperties.Hint="AccessAcc"
+                            Clicked="AccessAccount"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontSize="12"
+                            TextColor="Blue"
+                            BackgroundColor="Transparent"
+                            Padding="5"
+                            BorderColor="Blue"/>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Grid>
+
+            <Button
+                x:Name="ReturntoMainPage1"
+                Text="Return to MainPage"
+                SemanticProperties.Hint="Return"
+                Clicked="R1"
+                HorizontalOptions="Fill"
+                BackgroundColor="Blue" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

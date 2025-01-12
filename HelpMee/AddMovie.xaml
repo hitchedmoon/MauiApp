@@ -1,0 +1,51 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpMee.AddMovie"
+             BackgroundColor="LightGrey">
+	<Grid ColumnDefinitions="*,*">
+		<!-- Linke Spalte: Formularelemente -->
+		<ScrollView Grid.Column="0">
+			<VerticalStackLayout Padding="30,30" Spacing="20" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+				<Label Text="Add Film" FontSize="25" FontAttributes="Bold" TextColor="Black" />
+				<Entry x:Name="MovieTitleEntry" Placeholder="Filmtitel" TextColor="Black" BackgroundColor="White" PlaceholderColor="Black" />
+				<Editor x:Name="MovieDescriptionEntry" Placeholder="Notes" HeightRequest="100" TextColor="Black" BackgroundColor="White" PlaceholderColor="Black" />
+				<Label Text="Filmstatus" TextColor="Black" />
+				<Picker x:Name="MovieStatusPicker"
+						BackgroundColor="White"
+						TextColor="Black">
+					<Picker.ItemsSource>
+						<x:Array Type="{x:Type x:String}">
+							<x:String>Watched</x:String>
+							<x:String>Not Watch</x:String>
+							<x:String>Started</x:String>
+						</x:Array>
+					</Picker.ItemsSource>
+				</Picker>
+				<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+					<CheckBox x:Name="IsAdultCheckBox" />
+					<Label Text="18+" VerticalOptions="Center" FontSize="12" TextColor="Black" />
+				</StackLayout>
+				<Label Text="Rating (1-10)" FontSize="12" TextColor="Black" />
+				<Slider x:Name="MovieRatingSlider" Minimum="1" Maximum="10" Value="5" />
+				<Label Text="{Binding Source={x:Reference MovieRatingSlider}, Path=Value, StringFormat='Rating: {0:F0}'}" FontSize="12" TextColor="Black" />
+				<Button
+                    Text="Save Movie"
+                    Clicked="SaveMovieClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#28a745"
+                    TextColor="White" />
+				<Button 
+					Text="Dont Save!"
+					Clicked="BackToHomePage"
+					HorizontalOptions="Fill"
+					BackgroundColor="#FF0000"
+					TextColor="White"/>
+			</VerticalStackLayout>
+		</ScrollView>
+
+		<!-- Rechte Spalte: Bild -->
+		<StackLayout Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+			<Image Source="atat.png" Aspect="AspectFill" />
+		</StackLayout>
+	</Grid>
+</ContentPage>
